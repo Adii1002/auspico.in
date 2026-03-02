@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="About Auspico — Our mission to empower cafe owners with AI-powered POS and beautiful digital ordering." />
+  <title>About Us — Auspico | <%= title %></title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <%- include('partials/header', { active: active }) %>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <h1 class="page-title">About Us</h1>
+        <p class="page-subtitle">We&rsquo;re building the future of cafe operations—one table, one QR, one prompt at a time.</p>
+      </div>
+    </section>
+
+    <section class="about-content">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-block">
+            <h2>Our story</h2>
+            <p>
+              Auspico was born from a simple observation: cafe owners spend too much time on operations and too little on what matters—great coffee and great experiences. We wanted a POS that could show off your menu beautifully, let customers order from their table via QR, and give you daily insights—without needing a developer or a big IT team.
+            </p>
+            <p>
+              We combined modern AI with cafe-first design. You describe what you want in plain language; our system generates and updates your digital menus, highlights best-sellers, and keeps your ordering and billing in one place. The result is a fully automated flow from customer to staff to owner.
+            </p>
+          </div>
+          <div class="about-block">
+            <h2>Our mission</h2>
+            <p>
+              To empower every cafe owner with the same tools that big chains use—beautiful digital menus, table-wise QR ordering, smart billing, and daily insights—so you can focus on your customers and your brand, not on spreadsheets or legacy software.
+            </p>
+          </div>
+          <div class="about-block about-block-full">
+            <h2>Why choose Auspico?</h2>
+            <ul class="why-list">
+              <li><strong>AI-powered UI</strong> — Update menus, offers, and layouts with a prompt. No coding.</li>
+              <li><strong>Table-wise QR ordering</strong> — Customers order from their table; you get fewer errors and faster service.</li>
+              <li><strong>One system for everyone</strong> — Customers, staff, and owners stay in sync with a single platform.</li>
+              <li><strong>Daily insights</strong> — Know what sells, what to promote, and when to restock.</li>
+              <li><strong>Built for cafes</strong> — Designed for coffee shops, bakeries, and casual dining—not generic retail.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="trust-badges">
+      <div class="container">
+        <h2 class="section-title">Why cafes trust us</h2>
+        <div class="badges-grid">
+          <div class="badge-item">
+            <span class="badge-icon">&#9881;</span>
+            <span>No developer needed</span>
+          </div>
+          <div class="badge-item">
+            <span class="badge-icon">&#128274;</span>
+            <span>Secure & reliable</span>
+          </div>
+          <div class="badge-item">
+            <span class="badge-icon">&#128172;</span>
+            <span>Dedicated support</span>
+          </div>
+          <div class="badge-item">
+            <span class="badge-icon">&#128200;</span>
+            <span>Daily insights</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container">
+        <div class="cta-box">
+          <h2>Ready to transform your cafe?</h2>
+          <p>Get in touch for early access and product updates.</p>
+          <a href="/contact" class="btn btn-primary btn-lg">Contact us</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <%- include('partials/footer') %>
+  <script src="/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Auspico — AI-powered cafe POS. Table QR ordering, beautiful menus, daily insights. No developer needed." />
+  <title>Auspico — AI-Powered Cafe POS | <%= title %></title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <%- include('partials/header', { active: active }) %>
+
+  <main>
+    <section class="hero">
+      <div class="hero-bg">
+        <div class="hero-gradient"></div>
+        <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1920&q=80" alt="Coffee and cafe" class="hero-img" />
+      </div>
+      <div class="container hero-content">
+        <span class="badge">Coming Soon</span>
+        <h1 class="hero-title">Something big is <em>brewing</em> for your cafe.</h1>
+        <p class="hero-subtitle">
+          The AI-powered POS that turns every table into a digital menu. Your customers order via QR, you get stunning menus and daily insights—no developer, just a prompt.
+        </p>
+        <div class="hero-cta">
+          <a href="/contact" class="btn btn-primary">Get notified at launch</a>
+          <a href="/features" class="btn btn-ghost">See how it works</a>
+        </div>
+      </div>
+      <div class="hero-scroll" aria-hidden="true">
+        <span>Scroll</span>
+        <div class="scroll-line"></div>
+      </div>
+    </section>
+
+    <section class="intro" id="intro">
+      <div class="container">
+        <p class="intro-lead">
+          Auspico is a cafe POS built for <strong>cafe owners</strong>. We give you the best UI templates—powered by AI—so your customers see beautiful menus with images, ingredients, specialties, best-sellers, and reviews. Table-wise QR ordering, billing, and full automation from customer to staff to you.
+        </p>
+      </div>
+    </section>
+
+    <section class="features" id="features">
+      <div class="container">
+        <h2 class="section-title">One system. Your whole cafe.</h2>
+        <p class="section-subtitle">From ordering to billing to daily insights—all automated, all beautiful.</p>
+        <ul class="features-grid">
+          <li class="feature-card" style="animation-delay: 0.1s">
+            <div class="feature-icon">
+              <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600&q=85" alt="Cafe table and coffee" loading="lazy" />
+            </div>
+            <h3>Table-wise QR ordering</h3>
+            <p>Customers scan, browse your menu with photos and details, and order from their table. No waiting, no paper.</p>
+          </li>
+          <li class="feature-card" style="animation-delay: 0.2s">
+            <div class="feature-icon">
+              <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=600&q=85" alt="Coffee and menu" loading="lazy" />
+            </div>
+            <h3>AI-designed menus</h3>
+            <p>Stunning templates that show items, ingredients, specialties, best-sellers, and reviews—generated with a simple prompt.</p>
+          </li>
+          <li class="feature-card" style="animation-delay: 0.3s">
+            <div class="feature-icon">
+              <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&q=85" alt="Restaurant service and orders" loading="lazy" />
+            </div>
+            <h3>Orders, billing, staff</h3>
+            <p>Seamless flow from customer order to kitchen and counter. Billing and operations in one place.</p>
+          </li>
+          <li class="feature-card" style="animation-delay: 0.4s">
+            <div class="feature-icon">
+              <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=85" alt="Analytics and insights" loading="lazy" />
+            </div>
+            <h3>Daily insights & updates</h3>
+            <p>Add offers, launch new products, and refresh your UI daily. No developer—just tell the AI what you want.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="how" id="how-it-works">
+      <div class="container">
+        <h2 class="section-title">Built for everyone in the loop</h2>
+        <p class="section-subtitle">Customers, staff, and you—all connected.</p>
+        <div class="how-flow">
+          <div class="flow-step">
+            <span class="flow-num">1</span>
+            <h3>Your customers</h3>
+            <p>Scan table QR → see your menu with images, ingredients, reviews → order and pay. Simple.</p>
+          </div>
+          <div class="flow-arrow" aria-hidden="true">→</div>
+          <div class="flow-step">
+            <span class="flow-num">2</span>
+            <h3>Your staff</h3>
+            <p>Orders land in one place. Fulfill, serve, and manage without juggling paper or multiple screens.</p>
+          </div>
+          <div class="flow-arrow" aria-hidden="true">→</div>
+          <div class="flow-step">
+            <span class="flow-num">3</span>
+            <h3>You, the owner</h3>
+            <p>Manage your UI, see daily insights, add offers and new items with a prompt. No code, no developer.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonials">
+      <div class="container">
+        <h2 class="section-title">What cafe owners say</h2>
+        <p class="section-subtitle">Trusted by cafes who want to grow.</p>
+        <div class="testimonial-card">
+          <blockquote>
+            &ldquo;We were looking for a POS that could show our menu beautifully and handle table orders without extra staff. Auspico&rsquo;s AI-generated menus and QR ordering changed how we serve our customers. Setup was quick and we didn&rsquo;t need a developer.&rdquo;
+          </blockquote>
+          <cite>— Cafe owner, Mumbai</cite>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container">
+        <div class="cta-box">
+          <h2>Be the first to know.</h2>
+          <p>We&rsquo;re building the future of cafe ordering. Get in touch and we&rsquo;ll notify you at launch.</p>
+          <a href="/contact" class="btn btn-primary btn-lg">Contact us</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <%- include('partials/footer') %>
+  <script src="/js/main.js"></script>
+</body>
+</html>

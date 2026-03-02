@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Page Not Found — Auspico</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <%- include('partials/header', { active: null }) %>
+  <main class="error-page">
+    <div class="container">
+      <h1 class="error-code">404</h1>
+      <p class="error-text">Page not found. The link may be broken or the page may have been moved.</p>
+      <a href="/" class="btn btn-primary">Back to home</a>
+    </div>
+  </main>
+  <%- include('partials/footer') %>
+  <script src="/js/main.js"></script>
+</body>
+</html>

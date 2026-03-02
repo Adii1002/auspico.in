@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Contact Auspico — Get in touch for demos, early access, and support." />
+  <title>Contact Us — Auspico | <%= title %></title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <%- include('partials/header', { active: active }) %>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <h1 class="page-title">Contact Us</h1>
+        <p class="page-subtitle">Have questions? Want a demo or early access? We&rsquo;d love to hear from you.</p>
+      </div>
+    </section>
+
+    <section class="contact-page">
+      <div class="container">
+        <% if (success) { %>
+          <div class="alert alert-success" role="alert">
+            Thank you! Your message has been sent. We&rsquo;ll get back to you soon.
+          </div>
+        <% } %>
+        <% if (error) { %>
+          <div class="alert alert-error" role="alert">
+            <%= error %> Please try again.
+          </div>
+        <% } %>
+
+        <div class="contact-page-grid">
+          <div class="contact-form-block">
+            <h2>Send us a message</h2>
+            <form action="/contact" method="post" class="contact-form" id="contactForm">
+              <label for="name">Name <span class="required">*</span></label>
+              <input type="text" id="name" name="name" required maxlength="100" placeholder="Your name" />
+              <label for="email">Email <span class="required">*</span></label>
+              <input type="email" id="email" name="email" required placeholder="you@example.com" />
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" name="phone" placeholder="+91 98765 43210" />
+              <label for="message">Message <span class="required">*</span></label>
+              <textarea id="message" name="message" required rows="5" maxlength="2000" placeholder="Tell us about your cafe or what you need..."></textarea>
+              <button type="submit" class="btn btn-primary btn-lg">Send message</button>
+            </form>
+          </div>
+          <div class="contact-info-block">
+            <h2>Get in touch</h2>
+            <div class="contact-cards">
+              <a href="https://auspico.com" class="contact-card">
+                <span class="contact-card-label">Website</span>
+                <span class="contact-card-value">auspico.com</span>
+              </a>
+              <a href="mailto:customerservice@auspico.com" class="contact-card">
+                <span class="contact-card-label">Email</span>
+                <span class="contact-card-value">customerservice@auspico.com</span>
+              </a>
+              <a href="tel:+917020920064" class="contact-card">
+                <span class="contact-card-label">Phone</span>
+                <span class="contact-card-value">+91 70209 20064</span>
+              </a>
+            </div>
+            <div class="business-hours">
+              <h3>Business hours</h3>
+              <p>Mon – Fri: 9:00 AM – 6:00 PM IST<br />We typically respond within 24 hours.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <%- include('partials/footer') %>
+  <script src="/js/main.js"></script>
+  <script>
+    document.getElementById('contactForm')?.addEventListener('submit', function () {
+      var btn = this.querySelector('button[type="submit"]');
+      if (btn) { btn.disabled = true; btn.textContent = 'Sending…'; }
+    });
+  </script>
+</body>
+</html>

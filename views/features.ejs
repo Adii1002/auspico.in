@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Auspico features — QR ordering, AI menus, billing, insights. Everything you need to run your cafe." />
+  <title>Features — Auspico | <%= title %></title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <%- include('partials/header', { active: active }) %>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <h1 class="page-title">Features</h1>
+        <p class="page-subtitle">One system. Your whole cafe—ordering, billing, menus, and insights.</p>
+      </div>
+    </section>
+
+    <section class="features-detail">
+      <div class="container">
+        <div class="feature-detail-block">
+          <div class="feature-detail-media">
+            <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&q=85" alt="QR code ordering" loading="lazy" />
+          </div>
+          <div class="feature-detail-text">
+            <h2>Table-wise QR ordering</h2>
+            <p>Each table has its own QR code. Customers scan, see your full menu with photos, ingredients, and reviews, and place orders from their seat. No paper menus, no waiting for a server to take the order. Orders flow straight to your kitchen and billing.</p>
+            <ul>
+              <li>Custom QR per table for accurate order routing</li>
+              <li>Rich menu with images, ingredients, best-sellers</li>
+              <li>Faster service and fewer order errors</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="feature-detail-block reverse">
+          <div class="feature-detail-media">
+            <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800&q=85" alt="Digital menu" loading="lazy" />
+          </div>
+          <div class="feature-detail-text">
+            <h2>AI-designed menus</h2>
+            <p>Your menu is your brand. We use AI to generate and update stunning menu templates. Add new items, highlight specialties, show ingredients and reviews—all by entering a simple prompt. No designer or developer required.</p>
+            <ul>
+              <li>Beautiful templates that match your cafe vibe</li>
+              <li>Update content and layout with a prompt</li>
+              <li>Show best-sellers, offers, and daily specials</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="feature-detail-block">
+          <div class="feature-detail-media">
+            <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=85" alt="Orders and billing" loading="lazy" />
+          </div>
+          <div class="feature-detail-text">
+            <h2>Orders, billing & staff</h2>
+            <p>All orders—from QR or counter—land in one place. Kitchen gets KOTs, staff can fulfill and serve, and billing is integrated. Manage tables, split bills, and keep operations smooth without juggling multiple systems.</p>
+            <ul>
+              <li>Unified order management and kitchen display</li>
+              <li>Quick billing and payment settlement</li>
+              <li>Table management and order tracking</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="feature-detail-block reverse">
+          <div class="feature-detail-media">
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=85" alt="Analytics and insights" loading="lazy" />
+          </div>
+          <div class="feature-detail-text">
+            <h2>Daily insights & no-code updates</h2>
+            <p>See what&rsquo;s selling, what to promote, and how your cafe is performing. Add new offers, launch new products, or refresh your digital menu—by typing what you want. Our AI handles the rest. No developer, no long wait for updates.</p>
+            <ul>
+              <li>Daily reports on sales, top items, and trends</li>
+              <li>Add offers and new items via simple prompts</li>
+              <li>Keep your digital experience fresh without IT</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="trust-badges">
+      <div class="container">
+        <h2 class="section-title">Built for the way cafes work</h2>
+        <div class="badges-grid">
+          <div class="badge-item"><span class="badge-icon">&#9742;</span> <span>Quick billing</span></div>
+          <div class="badge-item"><span class="badge-icon">&#128196;</span> <span>Station-wise KOTs</span></div>
+          <div class="badge-item"><span class="badge-icon">&#127856;</span> <span>Item variations & add-ons</span></div>
+          <div class="badge-item"><span class="badge-icon">&#128200;</span> <span>Customer analytics</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container">
+        <div class="cta-box">
+          <h2>See it in action</h2>
+          <p>Schedule a demo or get notified when we launch.</p>
+          <a href="/contact" class="btn btn-primary btn-lg">Contact us</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <%- include('partials/footer') %>
+  <script src="/js/main.js"></script>
+</body>
+</html>
