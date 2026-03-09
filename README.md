@@ -54,12 +54,15 @@ Submissions are validated (name, email, message required; phone optional). On su
 
 ## Contact details (site)
 
-- **Website:** auspico.com  
-- **Email:** customerservice@auspico.com  
-- **Phone:** +91 70209 20064  
+- **Website:** auspico.in  
+- **Email:** auspico.dev@gmail.com  
+- **Phone:** +91 8432431002 
 
-## Deploy
+## Deploy to your domain
 
-1. Set `PORT` if needed (default 3000).
-2. Run `npm install --production` and `npm start` (or use a process manager like PM2).
-3. Put a reverse proxy (e.g. Nginx) in front for HTTPS and static caching if desired.
+See **[DEPLOY.md](./DEPLOY.md)** for the full procedure. Summary:
+
+1. **Deploy** the app to a host (e.g. [Render](https://render.com) or [Railway](https://railway.app) — connect GitHub, they build and run Node).
+2. **Add your domain** in the host’s dashboard (e.g. auspico.in).
+3. **DNS:** In your domain registrar, add the CNAME or A record the host gives you (points your domain to the app).
+4. **HTTPS** is usually automatic on PaaS; on a VPS use Nginx + Let’s Encrypt (steps in DEPLOY.md).
