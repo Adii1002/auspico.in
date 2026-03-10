@@ -48,7 +48,8 @@
               <input type="tel" id="phone" name="phone" placeholder="+91 98765 43210" />
               <label for="message">Message <span class="required">*</span></label>
               <textarea id="message" name="message" required rows="5" maxlength="2000" placeholder="Tell us about your cafe or what you need..."></textarea>
-              <button type="submit" class="btn btn-primary btn-lg">Send message</button>
+              <div id="formError" class="alert alert-error" role="alert" style="display: none;"></div>
+              <button type="submit" class="btn btn-primary btn-lg" id="submitBtn">Send message</button>
             </form>
           </div>
           <div class="contact-info-block">
@@ -79,11 +80,68 @@
 
   <%- include('partials/footer') %>
   <script src="/js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script>
-    document.getElementById('contactForm')?.addEventListener('submit', function () {
-      var btn = this.querySelector('button[type="submit"]');
-      if (btn) { btn.disabled = true; btn.textContent = 'Sending…'; }
-    });
+    (function() {
+      var form = document.getElementById('contactForm');
+      var submitBtn = document.getElementById('submitBtn');
+      var formError = document.getElementById('formError');
+      var emailjsConfig = <%- JSON.stringify(emailjs) %>;
+      var useEmailJS = emailjsConfig.serviceId && emailjsConfig.templateId && emailjsConfig.publicKey;
+
+      if (!form) return;
+      if (useEmailJS && typeof emailjs !== 'undefined') emailjs.init(emailjsConfig.publicKey);
+
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        if (formError) { formError.style.display = 'none'; formError.textContent = ''; }
+        if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Sending…'; }
+
+        var formData = new FormData(form);
+        var body = new URLSearchParams(formData);
+
+        fetch(form.action, {
+          method: 'POST',
+          headers: { 'Accept': 'application/json', 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: body
+        })
+          .then(function(r) { return r.json().then(function(d) { return { ok: r.ok, data: d }; }); })
+          .then(function(result) {
+            if (!result.ok) {
+              if (formError) {
+                formError.textContent = (result.data && result.data.error) || 'Something went wrong. Please try again.';
+                formError.style.display = 'block';
+              }
+              if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Send message'; }
+              return;
+            }
+            if (useEmailJS && typeof emailjs !== 'undefined') {
+              var params = {
+                from_name: formData.get('name'),
+                from_email: formData.get('email'),
+                from_phone: formData.get('phone') || '',
+                message: formData.get('message')
+              };
+              emailjs.send(emailjsConfig.serviceId, emailjsConfig.templateId, params)
+                .then(function() { window.location.href = '/contact?success=1'; })
+                .catch(function(err) {
+                  console.error('EmailJS error:', err);
+                  window.location.href = '/contact?success=1';
+                });
+            } else {
+              window.location.href = '/contact?success=1';
+            }
+          })
+          .catch(function(err) {
+            console.error(err);
+            if (formError) {
+              formError.textContent = 'Network error. Please try again.';
+              formError.style.display = 'block';
+            }
+            if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Send message'; }
+          });
+      });
+    })();
   </script>
 </body>
 </html>

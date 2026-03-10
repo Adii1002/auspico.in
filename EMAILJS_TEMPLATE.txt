@@ -1,0 +1,42 @@
+============================================
+PASTE THIS IN EMAILJS → Email Templates
+============================================
+
+1. Go to: https://dashboard.emailjs.com/admin/templates
+2. Click "Create New Template"
+3. Copy the sections below into the template.
+
+--------------------------------------------
+SUBJECT (Subject line field):
+--------------------------------------------
+
+[Auspico] Contact from {{from_name}}
+
+--------------------------------------------
+CONTENT (Body / Message field):
+--------------------------------------------
+
+New contact form submission from Auspico website:
+
+Name: {{from_name}}
+Email: {{from_email}}
+Phone: {{from_phone}}
+
+Message:
+{{message}}
+
+--------------------------------------------
+SETTINGS in the template:
+--------------------------------------------
+• To email: auspico.dev@gmail.com (or the email where you want to receive)
+• Reply-To: {{from_email}} (optional – so you can reply directly to the customer)
+• From name: Auspico Contact (optional)
+
+--------------------------------------------
+AFTER SAVING:
+--------------------------------------------
+Copy the Template ID (e.g. template_xxxxx) and put it in your .env file:
+
+EMAILJS_TEMPLATE_ID=template_xxxxx
+
+Then restart your server.

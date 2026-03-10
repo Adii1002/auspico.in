@@ -50,7 +50,11 @@ Open **http://localhost:3000**.
 
 ## Contact form
 
-Submissions are validated (name, email, message required; phone optional). On success, users are redirected to `/contact?success=1`; on validation error, to `/contact?error=...`. In production you can plug in email (e.g. Nodemailer) or save to a database.
+Submissions are validated (name, email, message required; phone optional). On success, users are redirected to `/contact?success=1`; on validation error, to `/contact?error=...`. Data is stored in memory (resets on restart).
+
+**Email:** Contact form uses **EmailJS** to send you an email when someone submits. See **[EMAILJS_SETUP.md](./EMAILJS_SETUP.md)** for a step-by-step guide. Set `EMAILJS_SERVICE_ID`, `EMAILJS_TEMPLATE_ID`, and `EMAILJS_PUBLIC_KEY` in `.env`. If not set, submissions are still saved and shown on the admin page; no email is sent.
+
+**Admin page:** View submissions at `/admin/contacts`. To protect it, set env var `ADMIN_KEY` to a secret; then open `https://yoursite.com/admin/contacts?key=YOUR_SECRET`. If `ADMIN_KEY` is not set, the page is open (use only for local dev). See `.env.example`.
 
 ## Contact details (site)
 
